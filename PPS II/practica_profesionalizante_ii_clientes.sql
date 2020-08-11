@@ -49,7 +49,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (0,'FACTURACION SIN CLIENTE',1,'12345678912','xxxxxxxxxxxxxxx',3,1,0),(1,'Molina Agustin',1,'20369643879','Luis Ponce 840',7,1,1),(2,'Lopez Martin',6,'37123456','Ricardo Petersen 860',3,1,1),(3,'Zabala Angel',1,'11225544668','Agustin Alvarez 1234',3,1,1),(6,'Molina Marchetti Cristian Agustin',1,'20369643879','Luis Ponce 840',1,1,1),(7,'Pruieb',1,'1234512','asdqwe',1,1,0),(8,'AAAA',1,'123132121','SDASE',1,1,0),(9,'Juancito',1,'12312312311','LALALA',11,3,0),(10,'JUANCHITOOOO',5,'33222112','ASDAXCZXC',5,4,0),(11,'Nuevitooo',8,'12345678','Av. Alvear Oeste n° 1234',3,1,0),(12,'Veisaga David',6,'40325125','Rafaela n° 2245',3,5,1),(13,'Raul Lopez',1,'20251453658','Salonia nº 22',3,5,1),(14,'Vamos a probar',1,'20123456789','Su casa',5,4,0),(16,'PROB',6,'33221154','Dir',3,5,0);
+INSERT INTO `clientes` VALUES (0,'FACTURACION SIN CLIENTE',1,'12345678912','xxxxxxxxxxxxxxx',3,1,0),(1,'Molina Agustin',1,'20369643879','Luis Ponce 840',7,1,1),(2,'Lopez Martin',6,'37614018','Ricardo Petersen 860',3,1,1),(3,'Zabala Angel',1,'11225544668','Agustin Alvarez 1234',3,1,1),(6,'Molina Marchetti Cristian Agustin',1,'20369643879','Luis Ponce 840',3,1,1),(7,'Pruieb',1,'1234512','asdqwe',1,1,0),(8,'AAAA',1,'123132121','SDASE',1,1,0),(9,'Juancito',1,'12312312311','LALALA',11,3,0),(10,'JUANCHITOOOO',5,'33222112','ASDAXCZXC',5,4,0),(11,'Nuevitooo',8,'12345678','Av. Alvear Oeste n° 1234',3,1,0),(12,'Veisaga David',6,'40325125','Rafaela n° 2245',3,5,1),(13,'Raul Lopez',1,'20251453658','Salonia nº 22',3,5,1),(14,'Vamos a probar',1,'20123456789','Su casa',5,4,0),(16,'PROB',6,'33221154','Dir',3,5,0);
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-22 10:52:14
+-- Dump completed on 2020-08-11 20:12:07

@@ -31,7 +31,7 @@ CREATE TABLE `stock` (
   PRIMARY KEY (`IdStock`),
   KEY `stock_prod_idx` (`IdProdStock`),
   CONSTRAINT `stock_prod` FOREIGN KEY (`IdProdStock`) REFERENCES `productos` (`IdProducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `stock` (
 
 LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
-INSERT INTO `stock` VALUES (1,1,123),(2,3,15),(3,5,1155),(4,6,250.5),(5,15,12),(6,16,54),(7,17,150),(8,18,300),(9,19,75),(10,20,50),(11,21,12),(12,22,150),(13,23,23),(14,24,124),(15,25,0);
+INSERT INTO `stock` VALUES (1,1,123),(2,3,15),(3,5,1155),(4,6,248),(5,15,12),(6,16,54),(7,17,150),(8,18,300),(9,19,68),(10,20,46),(11,21,12),(12,22,150),(13,23,23),(14,24,124),(15,25,0),(16,26,0);
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-22 10:52:17
+-- Dump completed on 2020-08-11 20:12:09

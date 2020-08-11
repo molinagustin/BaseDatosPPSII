@@ -29,16 +29,20 @@ CREATE TABLE `cuerpo_comprobantes` (
   `NumeroComprobante` int(11) NOT NULL,
   `ProductoServicio` int(11) NOT NULL,
   `Cantidad` float NOT NULL,
+  `UnidadMedida` int(11) DEFAULT NULL,
   `PrecioUnitario` float NOT NULL,
   `Bonificacion` float NOT NULL DEFAULT '0',
   `BonificacionTotal` float NOT NULL DEFAULT '0',
+  `SubTotal` float DEFAULT NULL,
   `Total` float NOT NULL,
   PRIMARY KEY (`IdCuerpo`),
   KEY `productoCuerpo_idx` (`ProductoServicio`) /*!80000 INVISIBLE */,
-  KEY `numCompCuerpo_idx` (`NumeroComprobante`),
-  CONSTRAINT `numCompCuerpo` FOREIGN KEY (`NumeroComprobante`) REFERENCES `encabezado_comprobantes` (`NumComprobante`),
-  CONSTRAINT `productoCuerpo` FOREIGN KEY (`ProductoServicio`) REFERENCES `productos` (`IdProducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `cuerpoEncab_idx` (`NumeroComprobante`),
+  KEY `unidadCuerpo_idx` (`UnidadMedida`),
+  CONSTRAINT `cuerpoEncab` FOREIGN KEY (`NumeroComprobante`) REFERENCES `encabezado_comprobantes` (`NumComprobante`),
+  CONSTRAINT `productoCuerpo` FOREIGN KEY (`ProductoServicio`) REFERENCES `productos` (`IdProducto`),
+  CONSTRAINT `unidadCuerpo` FOREIGN KEY (`UnidadMedida`) REFERENCES `unidades_medida` (`IdUnidadMedida`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +51,7 @@ CREATE TABLE `cuerpo_comprobantes` (
 
 LOCK TABLES `cuerpo_comprobantes` WRITE;
 /*!40000 ALTER TABLE `cuerpo_comprobantes` DISABLE KEYS */;
-INSERT INTO `cuerpo_comprobantes` VALUES (1,1,1,5,75,0,0,375),(2,1,3,3,150,0,0,450),(3,1,5,1,230.46,0,0,230.46),(4,2,1,10,75,0,0,750),(5,2,5,6,230.46,0,0,1382.76),(6,3,3,12,150,0,0,1800),(7,4,1,2,75,0,0,150),(8,4,6,1.5,37.5,0,0,56.25),(9,4,3,1,150,0,0,150),(10,4,5,10,230.46,0,0,2304.6),(11,5,5,2,230.46,0,0,460.92),(12,5,1,1,75,0,0,75),(13,6,3,10,150,0,0,1500),(14,6,1,10,75,50,375,375),(15,6,6,2.3,37.5,0,0,86.25),(16,7,1,12,75,25,125,675),(17,7,6,2,37.5,0,0,75),(18,8,1,9,75,0,0,675),(19,8,5,8,230.46,10,184.37,1659.31),(20,9,6,3,37.5,0,0,112.5),(21,9,1,1,75,0,0,75),(22,10,3,10,150,10,150,1350),(23,10,1,5,75,0,0,375);
+INSERT INTO `cuerpo_comprobantes` VALUES (1,1,1,5,NULL,75,0,0,NULL,375),(2,1,3,3,NULL,150,0,0,NULL,450),(3,1,5,1,NULL,230.46,0,0,NULL,230.46),(4,2,1,10,NULL,75,0,0,NULL,750),(5,2,5,6,NULL,230.46,0,0,NULL,1382.76),(6,3,3,12,NULL,150,0,0,NULL,1800),(7,4,1,2,NULL,75,0,0,NULL,150),(8,4,6,1.5,NULL,37.5,0,0,NULL,56.25),(9,4,3,1,NULL,150,0,0,NULL,150),(10,4,5,10,NULL,230.46,0,0,NULL,2304.6),(11,5,5,2,NULL,230.46,0,0,NULL,460.92),(12,5,1,1,NULL,75,0,0,NULL,75),(13,6,3,10,NULL,150,0,0,NULL,1500),(14,6,1,10,NULL,75,50,375,NULL,375),(15,6,6,2.3,NULL,37.5,0,0,NULL,86.25),(16,7,1,12,NULL,75,25,125,NULL,675),(17,7,6,2,NULL,37.5,0,0,NULL,75),(18,8,1,9,NULL,75,0,0,NULL,675),(19,8,5,8,NULL,230.46,10,184.37,NULL,1659.31),(20,9,6,3,NULL,37.5,0,0,NULL,112.5),(21,9,1,1,NULL,75,0,0,NULL,75),(22,10,3,10,NULL,150,10,150,NULL,1350),(23,10,1,5,NULL,75,0,0,NULL,375),(24,11,26,1,NULL,1000,0,0,NULL,1000),(25,13,26,1,7,1000,0,0,1000,1000),(26,14,20,1,7,276.53,0,0,276.53,276.53),(27,15,20,1,7,276.53,0,0,276.53,276.53),(28,15,19,1,7,300,0,0,300,576.53),(29,15,19,1,7,300,0,0,300,876.53),(30,16,20,1,7,276.53,0,0,276.53,276.53),(31,16,19,1,7,300,0,0,300,576.53),(32,17,20,3,7,276.53,10,82.959,746.631,746.631),(33,17,19,6,7,300,0,0,1800,2546.63),(34,17,6,2.5,1,37.5,0,0,93.75,2640.38);
 /*!40000 ALTER TABLE `cuerpo_comprobantes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +64,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-22 10:52:15
+-- Dump completed on 2020-08-11 20:12:08

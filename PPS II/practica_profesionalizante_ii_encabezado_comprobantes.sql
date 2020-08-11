@@ -25,7 +25,9 @@ DROP TABLE IF EXISTS `encabezado_comprobantes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `encabezado_comprobantes` (
-  `NumComprobante` int(11) NOT NULL,
+  `NumComprobante` int(11) NOT NULL AUTO_INCREMENT,
+  `ComprobanteCompleto` varchar(45) DEFAULT NULL,
+  `CAE` varchar(45) DEFAULT NULL,
   `TipoComprobante` int(11) NOT NULL,
   `Fecha` date NOT NULL,
   `Cliente` int(11) NOT NULL DEFAULT '0',
@@ -52,7 +54,7 @@ CREATE TABLE `encabezado_comprobantes` (
   CONSTRAINT `puntoVtaEncab` FOREIGN KEY (`PuntoVta`) REFERENCES `puntos_venta` (`IdPuntoVta`),
   CONSTRAINT `tarjetaEncab` FOREIGN KEY (`Tarjeta`) REFERENCES `tarjetas` (`IdTarjeta`),
   CONSTRAINT `tipoCompEncab` FOREIGN KEY (`TipoComprobante`) REFERENCES `tipos_comprobantes` (`IdTipo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,7 +63,7 @@ CREATE TABLE `encabezado_comprobantes` (
 
 LOCK TABLES `encabezado_comprobantes` WRITE;
 /*!40000 ALTER TABLE `encabezado_comprobantes` DISABLE KEYS */;
-INSERT INTO `encabezado_comprobantes` VALUES (1,3,'2019-01-01',6,1,'\"\"',1,1,0,0,'\"\"','\"\"'),(2,3,'2019-05-13',2,3,'\"\"',1,1,0,0,'\"\"','\"\"'),(3,1,'2019-08-17',6,1,'\"\"',1,1,0,0,'\"\"','\"\"'),(4,1,'2019-12-12',6,1,'\"\"',1,1,0,0,'\"\"','\"\"'),(5,2,'2019-12-12',6,1,'\"\"',1,1,0,0,'\"\"','\"\"'),(6,3,'2020-01-26',3,3,'\"\"',1,1,0,0,'\"\"','\"\"'),(7,3,'2020-04-04',2,3,'\"\"',1,1,0,0,'\"\"','\"\"'),(8,3,'2020-05-17',2,3,'\"\"',1,1,0,0,'\"\"','\"\"'),(9,3,'2020-07-22',0,3,'\"\"',1,1,0,0,'\"\"','\"\"'),(10,3,'2020-07-17',0,3,'\"\"',1,1,0,0,'\"\"','\"\"');
+INSERT INTO `encabezado_comprobantes` VALUES (1,NULL,NULL,3,'2019-01-01',6,1,'\"\"',1,1,0,0,'\"\"','\"\"'),(2,NULL,NULL,3,'2019-05-13',2,3,'\"\"',1,1,0,0,'\"\"','\"\"'),(3,NULL,NULL,1,'2019-08-17',6,1,'\"\"',1,1,0,0,'\"\"','\"\"'),(4,NULL,NULL,1,'2019-12-12',6,1,'\"\"',1,1,0,0,'\"\"','\"\"'),(5,NULL,NULL,2,'2019-12-12',6,1,'\"\"',1,1,0,0,'\"\"','\"\"'),(6,NULL,NULL,3,'2020-01-26',3,3,'\"\"',1,1,0,0,'\"\"','\"\"'),(7,NULL,NULL,3,'2020-04-04',2,3,'\"\"',1,1,0,0,'\"\"','\"\"'),(8,NULL,NULL,3,'2020-05-17',2,3,'\"\"',1,1,0,0,'\"\"','\"\"'),(9,NULL,NULL,3,'2020-07-22',0,3,'\"\"',1,1,0,0,'\"\"','\"\"'),(10,NULL,NULL,3,'2020-07-17',0,3,'\"\"',1,1,0,0,'\"\"','\"\"'),(11,NULL,NULL,3,'2020-08-10',2,3,'Productos',1,1,0,0,NULL,NULL),(12,NULL,NULL,3,'2020-08-11',2,3,'Productos',1,1,0,0,NULL,NULL),(13,NULL,NULL,3,'2020-08-11',2,3,'Productos',1,1,0,0,NULL,NULL),(14,NULL,NULL,3,'2020-08-11',2,3,'Productos',1,1,0,0,NULL,NULL),(15,NULL,NULL,3,'2020-08-11',2,3,'Productos',1,1,0,0,NULL,NULL),(16,NULL,NULL,3,'2020-08-11',12,3,'Productos',1,1,0,0,NULL,NULL),(17,NULL,NULL,3,'2020-08-11',6,3,'Productos',1,1,0,0,NULL,NULL);
 /*!40000 ALTER TABLE `encabezado_comprobantes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -74,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-22 10:52:14
+-- Dump completed on 2020-08-11 20:12:06
